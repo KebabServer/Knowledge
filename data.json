@@ -9,8 +9,8 @@
         "displayText": "Action folds around to the Button who opens to 2.50 BB. Small Blind folds. You are sitting in the Big Blind defending with Ah Kh.\n\nFaced with a late position open, premium holdings should be 3-bet to build the pot size instantly and seize initiative out-of-position.",
         "players": [
             { "position": "BTN", "isActive": true, "isTurn": false, "stackSize": "77.00 BB", "currentBet": "23.00 BB", "holeCards": ["??", "??"], "isHero": false },
-            { "position": "SB", "isActive": false, "isTurn": false, "stackSize": "89.00 BB", "currentBet": "11.00 BB, "holeCards": null, "isHero": false },
-            { "position": "BB", "isActive": true, "isTurn": true, "stackSize": "99.00 BB", "currentBet": "1.00 BB", "holeCards": ["??", "??"], "isHero": true },
+            { "position": "SB", "isActive": false, "isTurn": false, "stackSize": "89.00 BB", "currentBet": "11.00 BB", "holeCards": ["??", "??"], "isHero": true },
+            { "position": "BB", "isActive": true, "isTurn": true, "stackSize": "99.00 BB", "currentBet": "1.00 BB", "holeCards": null, "isHero": false },
             { "position": "UTG", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
             { "position": "HJ", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
             { "position": "CO", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false }
