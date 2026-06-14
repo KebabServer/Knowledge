@@ -245,7 +245,6 @@ function generateChipStackHtml(betString) {
 
 function renderApplicationState(node) {
     document.getElementById('nodeTitle').innerText = node.title;
-    // FIXED: Adjusted node.displayText to node.description to match your JSON data schema modal
     document.getElementById('nodeDescription').innerText = node.description || node.displayText;
     document.getElementById('potDisplay').innerText = `Pot: ${node.pot}`;
 
@@ -253,25 +252,23 @@ function renderApplicationState(node) {
     const betsContainer = document.getElementById('betsContainer');
     const cardsContainer = document.getElementById('communityCardsContainer');
     
-    playersContainer.innerHTML = ''; betsContainer.innerHTML = ''; cardsContainer.innerHTML = '';
+    // Build strings in memory to optimize paint/render steps
+    let playersHtml = '';
+    let betsHtml = '';
 
     if (!node.communityCards || node.communityCards.length === 0) {
         cardsContainer.innerHTML = `<span style="color:rgba(255,255,255,0.2); font-size:0.7rem; margin-top:18px; font-weight:bold;">PREFLOP</span>`;
     } else {
-        node.communityCards.forEach(cardStr => {
-            cardsContainer.innerHTML += parseCardHtml(cardStr);
-        });
+        cardsContainer.innerHTML = node.communityCards.map(parseCardHtml).join('');
     }
 
     node.players.forEach(player => {
         let holeCardsHtml = '';
         if (player.isActive && player.holeCards) {
-            player.holeCards.forEach(c => {
-                holeCardsHtml += parseCardHtml(c);
-            });
+            holeCardsHtml = player.holeCards.map(parseCardHtml).join('');
         }
 
-        playersContainer.innerHTML += `
+        playersHtml += `
             <div class="player-seat ${player.isTurn ? 'active-turn' : ''} ${player.isActive ? '' : 'inactive'}" data-seat="${player.position}">
                 <div class="seat-position">${player.position} ${player.isHero ? '(Hero)' : ''}</div>
                 <div class="seat-stack">${player.stackSize}</div>
@@ -280,7 +277,7 @@ function renderApplicationState(node) {
         `;
 
         if (parseFloat(player.currentBet) > 0) {
-            betsContainer.innerHTML += `
+            betsHtml += `
                 <div class="bet-indicator" data-bet="${player.position}">
                     ${generateChipStackHtml(player.currentBet)}
                     <span>${player.currentBet}</span>
@@ -289,8 +286,13 @@ function renderApplicationState(node) {
         }
     });
 
+    playersContainer.innerHTML = playersHtml;
+    betsContainer.innerHTML = betsHtml;
+
+    // Render Navigation Options efficiently
     const controls = document.getElementById('navigationControls');
     controls.innerHTML = '';
+    
     node.choices.forEach(choice => {
         const btn = document.createElement('button');
         btn.className = "nav-btn action-btn";
@@ -299,7 +301,15 @@ function renderApplicationState(node) {
         controls.appendChild(btn);
     });
 
-    document.getElementById('strategyIframe').src = node.externalUrl || 'about:blank';
+    // Safely update framework location context
+    const iframe = document.getElementById('strategyIframe');
+    const targetUrl = node.externalUrl || 'about:blank';
+    if (iframe.contentWindow) {
+        iframe.contentWindow.location.replace(targetUrl);
+    } else {
+        iframe.src = targetUrl;
+    }
+
     renderNodeIndexList();
 }
 
