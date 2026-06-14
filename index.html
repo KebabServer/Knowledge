@@ -713,7 +713,7 @@
 
             // Safely update framework location context
             const iframe = document.getElementById('strategyIframe');
-            const targetUrl = node.externalUrl || 'about:blank';
+            const targetUrl = "./" + node.externalUrl || 'about:blank';
             if (iframe.contentWindow) {
                 iframe.contentWindow.location.replace(targetUrl);
             } else {
