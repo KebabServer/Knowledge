@@ -20,6 +20,27 @@
             { "text": "default", "nextNodeId": "default" }
         ]
     },
+     {
+        "nodeId": "Playing_Draws",
+        "title": "Playing Draws",
+        "phase": "PREFLOP",
+        "pot": "0.00 BB",
+        "communityCards": [],
+        "externalUrl": "Playing_Draws.html", 
+        "displayText": "",
+        "players": [
+            { "position": "BTN", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": true },
+            { "position": "SB", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
+            { "position": "BB", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
+            { "position": "UTG", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
+            { "position": "HJ", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
+            { "position": "CO", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false }
+        ],
+        "choices": [
+            { "text": "default", "nextNodeId": "default" },
+            { "text": "default", "nextNodeId": "default" }
+        ]
+    },
     {
         "nodeId": "preflop_SB_vs_BTN_4Bet",
         "title": "Preflop Small Blind Facing Button 4Bet",
