@@ -73,7 +73,7 @@
         "players": [
             { "position": "BTN", "isActive": true, "isTurn": false, "stackSize": "93.50 BB", "currentBet": "0.00 BB", "holeCards": ["??", "??"], "isHero": false },
             { "position": "SB", "isActive": false, "isTurn": false, "stackSize": "99.50 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "BB", "isActive": true, "isTurn": true, "stackSize": "94.50 BB", "currentBet": "0.00 BB", "holeCards: [\"Ah\", \"Kh\"], \"isHero\": true },
+            { "position": "BB", "isActive": true, "isTurn": true, "stackSize": "94.50 BB", "currentBet": "0.00 BB", "holeCards": [\"Ah\", \"Kh\"], \"isHero\": true },
             { "position": "UTG", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
             { "position": "HJ", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
             { "position": "CO", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false }
