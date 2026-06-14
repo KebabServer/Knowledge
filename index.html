@@ -174,23 +174,32 @@
         let currentNode = null;
 
         // Dynamic Async Initialization Layer
-        async function loadGameTreeData() {
-            const descriptionBox = document.getElementById('nodeDescription');
+        async function initializeTreeData() {
             try {
-                const response = await fetch('data.json');
-                if (!response.ok) throw new Error(`HTTP network error status: ${response.status}`);
+        // Adding './' forces the browser to look relative to index.html's subfolder on GH Pages
+                const response = await fetch('./data.json'); 
+                if (!response.ok) throw new Error(`HTTP network error code detected: ${response.status}`);
+        
                 gameTree = await response.json();
-                
                 if (gameTree.length > 0) {
                     currentNode = gameTree[0];
                     renderApplicationState(currentNode);
                 }
             } catch (error) {
-                console.error("JSON Fetch sequence interrupted:", error);
-                document.getElementById('nodeTitle').innerText = "Data Sync Error";
-                descriptionBox.innerHTML = `<span style="color:#e74c3c; font-weight:bold;">Could not fetch 'data.json'.</span><br><br>
-                <em>Note: If loading directly via a local filepath directory link (<code>file:///</code>), browsers block asynchronous fetch actions due to security policies. Please host your folder via a local server (e.g., Live Server or <code>python -m http.server</code>) to proceed.</em>`;
-            }
+                console.error("Critical Failure - JSON Matrix could not load:", error);
+                document.getElementById('nodeTitle').innerText = "Data Initialization Blocked";
+                document.getElementById('nodeDescription').innerHTML = `
+                    <span style="color:#e74c3c; font-weight:bold;">Unable to read file: data.json</span><br><br>
+                    <strong>Troubleshooting Steps:</strong><br>
+                    1. Ensure <code>data.json</code> is saved in the exact same folder as this file.<br>
+                    2. If deployed to GitHub Pages, ensure you committed the lowercase filename accurately as Git occasionally ignores strict case changes.
+                    `;
+        
+                const tableErr = document.createElement('div');
+                tableErr.className = 'error-overlay';
+                tableErr.innerText = "Error: Awaiting data.json stream over active host.";
+                document.getElementById('tableWrapper').appendChild(tableErr);
+                }
         }
 
         function generateChipStackHtml(betString) {
