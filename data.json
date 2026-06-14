@@ -36,10 +36,6 @@
             { "position": "HJ", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
             { "position": "CO", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false }
         ],
-        "choices": [
-            { "text": "default", "nextNodeId": "default" },
-            { "text": "default", "nextNodeId": "default" }
-        ]
     },
     {
         "nodeId": "preflop_SB_vs_BTN_4Bet",
