@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimal Dark Article</title>
     <style>
         /* Reset and Base Styles */
         * {
@@ -17,99 +15,82 @@
             background-color: #121214;
             color: #e4e4e7;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-            /* Reduced from 1.7 for tighter text lines */
-            padding: 2rem 1rem;
+            line-height: 1.4; /* Tightened line spacing for maximum density */
+            padding: 1.5rem 1rem;
         }
 
-        /* Layout Container */
+        /* Expanded Layout Container */
         .container {
-            max-width: 680px;
+            max-width: 1100px; /* Made wider to fit more text per line */
             margin: 0 auto;
         }
 
         /* Article Header */
         header {
-            margin-bottom: 2.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .meta {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #a1a1aa;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem; /* Scaled down header */
             color: #ffffff;
-            line-height: 1.2;
-            font-weight: 800;
-            letter-spacing: -0.02em;
+            line-height: 1.15;
+            font-weight: 700;
+            letter-spacing: -0.01em;
         }
 
-        /* Article Content */
+        /* High-Density Article Content */
         article p {
-            margin-bottom: 0.85rem;
-            /* Reduced from 1.5rem to bring paragraphs closer */
-            font-size: 1.1rem;
+            margin-bottom: 0.65rem; /* Minimal spacing between paragraphs */
+            font-size: 0.95rem; /* Smaller font size to pack in more words */
             color: #d4d4d8;
         }
 
         article h2 {
-            font-size: 1.75rem;
+            font-size: 1.35rem; /* Compact subheadings */
             color: #ffffff;
-            margin: 1.75rem 0 0.5rem 0;
-            /* Reduced top/bottom margins around headings */
-            letter-spacing: -0.01em;
+            margin: 1.25rem 0 0.4rem 0;
         }
 
-        article ul,
-        article ol {
-            margin: 0.85rem 0;
-            /* Matches the new paragraph margin */
-            padding-left: 1.5rem;
+        /* Compact Indented Lists */
+        article ul, article ol {
+            margin: 0.65rem 0;
+            padding-left: 1.25rem; /* Clean, tight indent */
         }
 
         article li {
-            margin-bottom: 0.5rem;
-            /* Adds space between each list item */
-            font-size: 1.1rem;
+            margin-bottom: 0.25rem; /* Minimal gap between list items */
+            font-size: 0.95rem;
             color: #d4d4d8;
         }
 
-        /* Optional: Subtle accent color for numbers/bullets */
         article li::marker {
             color: #3b82f6;
         }
 
-        /* Blockquote Accent */
+        /* Compact Blockquote */
         blockquote {
-            border-left: 4px solid #3b82f6;
-            padding-left: 1.25rem;
-            margin: 2rem 0;
+            border-left: 3px solid #3b82f6;
+            padding-left: 1rem;
+            margin: 1.25rem 0;
             font-style: italic;
             color: #a1a1aa;
+            font-size: 0.95rem;
         }
 
-        /* Simple Footer */
+        /* Footer */
         footer {
-            margin-top: 4rem;
-            padding-top: 1.5rem;
+            margin-top: 2.5rem;
+            padding-top: 1rem;
             border-top: 1px solid #27272a;
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #71717a;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            article p {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
@@ -118,10 +99,8 @@
 
     <div class="container">
         <header>
-            <div class="meta">Published on 24-6-2026</div>
             <h1>Facing 4B OOP</h1>
         </header>
-
         <main>
             <article>
                 <p>Facing a 4Bet OOP is not a great node.</p>
@@ -152,8 +131,24 @@
                                 hands that need protection</li>
                         </ul>
                     </li>
+                    <li>You can almost always shove an 8-out draw or better</li>
                 </ul>
-                <h2></h2>
+                <h2>Make sure you play your range and NOT your specific hand vs regs</h2>
+                <ul>
+                    <li>If the flop checks around and the turn is good for your opponent, don't get too excited with a big hand and leave your checking range unprotected
+                        <ul>
+                            <li>Check shove highest equity draws</li>
+                            <li>Slowplay your best value hands</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h2>Try to identify spots where the pool doesn't understand their hand's equity vs a range with thin value raises</h2>
+                <ul>
+                    <li>The wider your opponent's range, the better</li>
+                    <li>The more sizing tell you can pick up, the better</li>
+                    <li>The more loosely they call, the better</li>
+                    <li>The more they cbet too weak a range, the better</li>
+                </ul>
 
 
             </article>
