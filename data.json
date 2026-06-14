@@ -6,11 +6,11 @@
         "pot": "0.00 BB",
         "communityCards": [],
         "externalUrl": "", 
-        "displayText": "-Facing a 4Bet OOP is not a great node. Once we face a 4B we shift from a high-EV 3B spot to one where we just want to lose as little as possible.\n test",
+        "displayText": "",
         "players": [
-            { "position": "BTN", "isActive": true, "isTurn": false, "stackSize": "77.00 BB", "currentBet": "23.00 BB", "holeCards": ["??", "??"], "isHero": false },
-            { "position": "SB", "isActive": false, "isTurn": false, "stackSize": "89.00 BB", "currentBet": "11.00 BB", "holeCards": ["??", "??"], "isHero": true },
-            { "position": "BB", "isActive": true, "isTurn": true, "stackSize": "99.00 BB", "currentBet": "1.00 BB", "holeCards": null, "isHero": false },
+            { "position": "BTN", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": true },
+            { "position": "SB", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
+            { "position": "BB", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
             { "position": "UTG", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
             { "position": "HJ", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
             { "position": "CO", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false }
