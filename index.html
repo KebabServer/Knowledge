@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,8 +18,20 @@
             --active-node-bg: #2c3e50;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-main); height: 100vh; display: flex; overflow: hidden; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
 
         .app-container {
             display: grid;
@@ -30,76 +43,425 @@
         }
 
         /* Left Column Viewport */
-        .left-column { background: #0d0d0d; border-radius: 12px; border: 1px solid #222; overflow: hidden; height: 100%; }
-        .strategy-iframe { width: 100%; height: 100%; border: none; background: #ffffff; }
+        .left-column {
+            background: #0d0d0d;
+            border-radius: 12px;
+            border: 1px solid #222;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .strategy-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #ffffff;
+        }
 
         /* Right Column Stack */
-        .right-column { display: flex; flex-direction: column; gap: 15px; height: 100%; overflow-y: hidden; }
-        .panel { background-color: var(--panel-bg); border-radius: 12px; border: 1px solid #333; padding: 15px; display: flex; flex-direction: column; overflow: hidden; }
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            height: 100%;
+            overflow-y: hidden;
+        }
+
+        .panel {
+            background-color: var(--panel-bg);
+            border-radius: 12px;
+            border: 1px solid #333;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
 
         /* Tier 1 Table */
-        .table-panel { flex: 1.4; background: #0d0d0d; justify-content: center; align-items: center; position: relative; padding: 40px 55px; }
-        .poker-table { position: relative; width: 100%; max-width: 580px; aspect-ratio: 2.1 / 1; background-color: var(--table-felt); border: 14px solid var(--table-border); border-radius: 150px; box-shadow: inset 0 0 45px rgba(0,0,0,0.9); display: flex; justify-content: center; align-items: center; }
-        .table-center { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 6px; z-index: 2; }
-        .pot-display { background: rgba(0, 0, 0, 0.85); padding: 4px 12px; border-radius: 15px; border: 1px solid #444; font-weight: bold; font-size: 0.9rem; color: #62ff86; }
-        .community-cards { display: flex; gap: 5px; min-height: 52px; }
+        .table-panel {
+            flex: 1.4;
+            background: #0d0d0d;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 40px 55px;
+        }
+
+        .poker-table {
+            position: relative;
+            width: 100%;
+            max-width: 580px;
+            aspect-ratio: 2.1 / 1;
+            background-color: var(--table-felt);
+            border: 14px solid var(--table-border);
+            border-radius: 150px;
+            box-shadow: inset 0 0 45px rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .table-center {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            z-index: 2;
+        }
+
+        .pot-display {
+            background: rgba(0, 0, 0, 0.85);
+            padding: 4px 12px;
+            border-radius: 15px;
+            border: 1px solid #444;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #62ff86;
+        }
+
+        .community-cards {
+            display: flex;
+            gap: 5px;
+            min-height: 52px;
+        }
 
         /* Seats & Cards Layout */
-        .player-seat { position: absolute; width: 105px; background: rgba(20, 20, 20, 0.95); border: 2px solid #444; border-radius: 6px; padding: 5px; text-align: center; font-size: 0.75rem; box-shadow: 0 4px 8px rgba(0,0,0,0.6); z-index: 5; }
-        .player-seat.inactive { opacity: 0.2; border-color: #222; }
-        .player-seat.active-turn { border-color: var(--accent-green); box-shadow: 0 0 12px rgba(39, 174, 96, 0.6); }
-        .seat-position { font-weight: bold; color: var(--text-muted); }
-        .seat-stack { color: #ffcc00; font-weight: 600; font-size: 0.7rem; }
-        .hole-cards { display: flex; justify-content: center; gap: 3px; margin-top: 4px; height: 26px; }
-        .card { width: 18px; height: 26px; background: white; border-radius: 3px; color: black; font-weight: bold; font-size: 0.65rem; display: flex; justify-content: center; align-items: center; }
-        .card.card-back { background: linear-gradient(135deg, #bdc3c7, #95a5a6); border: 1px solid #7f8c8d; }
-        .card.hearts, .card.diamonds { color: #e74c3c; }
-        .card.clubs, .card.spades { color: #2c3e50; }
+        .player-seat {
+            position: absolute;
+            width: 105px;
+            background: rgba(20, 20, 20, 0.95);
+            border: 2px solid #444;
+            border-radius: 6px;
+            padding: 5px;
+            text-align: center;
+            font-size: 0.75rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+            z-index: 5;
+        }
+
+        .player-seat.inactive {
+            opacity: 0.2;
+            border-color: #222;
+        }
+
+        .player-seat.active-turn {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 12px rgba(39, 174, 96, 0.6);
+        }
+
+        .seat-position {
+            font-weight: bold;
+            color: var(--text-muted);
+        }
+
+        .seat-stack {
+            color: #ffcc00;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+
+        .hole-cards {
+            display: flex;
+            justify-content: center;
+            gap: 3px;
+            margin-top: 4px;
+            height: 26px;
+        }
+
+        .card {
+            width: 18px;
+            height: 26px;
+            background: white;
+            border-radius: 3px;
+            color: black;
+            font-weight: bold;
+            font-size: 0.65rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card.card-back {
+            background: linear-gradient(135deg, #bdc3c7, #95a5a6);
+            border: 1px solid #7f8c8d;
+        }
+
+        .card.hearts,
+        .card.diamonds {
+            color: #e74c3c;
+        }
+
+        .card.clubs,
+        .card.spades {
+            color: #2c3e50;
+        }
 
         /* Inward Bets Coordinates */
-        .bet-indicator { position: absolute; display: flex; align-items: center; gap: 6px; background: rgba(0, 0, 0, 0.75); padding: 2px 8px; border-radius: 12px; font-size: 0.7rem; font-weight: bold; color: #fff; border: 1px solid #444; z-index: 10; }
-        .chip-stack { position: relative; width: 14px; height: 16px; }
-        .poker-chip { position: absolute; width: 14px; height: 14px; border-radius: 50%; border: 1px dashed rgba(255, 255, 255, 0.7); }
+        .bet-indicator {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0, 0, 0, 0.75);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: #fff;
+            border: 1px solid #444;
+            z-index: 10;
+        }
 
-        [data-seat="BTN"] { top: -26px; left: 20%; } [data-seat="SB"]  { top: -26px; right: 20%; } [data-seat="BB"]  { top: 35%; right: -45px; }
-        [data-seat="UTG"] { bottom: -26px; right: 20%; } [data-seat="HJ"]  { bottom: -26px; left: 20%; } [data-seat="CO"]  { top: 35%; left: -45px; }
-        [data-bet="BTN"] { top: 38px; left: 24%; } [data-bet="SB"]  { top: 38px; right: 24%; } [data-bet="BB"]  { top: 44%; right: 90px; }
-        [data-bet="UTG"] { bottom: 38px; right: 24%; } [data-bet="HJ"]  { bottom: 38px; left: 24%; } [data-bet="CO"]  { top: 44%; left: 90px; }
+        .chip-stack {
+            position: relative;
+            width: 14px;
+            height: 16px;
+        }
+
+        .poker-chip {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1px dashed rgba(255, 255, 255, 0.7);
+        }
+
+        [data-seat="BTN"] {
+            top: -26px;
+            left: 20%;
+        }
+
+        [data-seat="SB"] {
+            top: -26px;
+            right: 20%;
+        }
+
+        [data-seat="BB"] {
+            top: 35%;
+            right: -45px;
+        }
+
+        [data-seat="UTG"] {
+            bottom: -26px;
+            right: 20%;
+        }
+
+        [data-seat="HJ"] {
+            bottom: -26px;
+            left: 20%;
+        }
+
+        [data-seat="CO"] {
+            top: 35%;
+            left: -45px;
+        }
+
+        [data-bet="BTN"] {
+            top: 38px;
+            left: 24%;
+        }
+
+        [data-bet="SB"] {
+            top: 38px;
+            right: 24%;
+        }
+
+        [data-bet="BB"] {
+            top: 44%;
+            right: 90px;
+        }
+
+        [data-bet="UTG"] {
+            bottom: 38px;
+            right: 24%;
+        }
+
+        [data-bet="HJ"] {
+            bottom: 38px;
+            left: 24%;
+        }
+
+        [data-bet="CO"] {
+            top: 44%;
+            left: 90px;
+        }
 
         /* Tier 2 Narrative */
-        .text-panel { flex: 1; }
-        .text-panel h2 { font-size: 1.1rem; margin-bottom: 6px; border-bottom: 1px solid #333; padding-bottom: 4px; color: var(--accent-green); }
-        .node-description { font-size: 0.88rem; line-height: 1.45; color: #e0e0e0; overflow-y: auto; flex: 1; }
-        .navigation-panel { margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap; }
+        .text-panel {
+            flex: 1;
+        }
+
+        .text-panel h2 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+            color: var(--accent-green);
+        }
+
+        .node-description {
+            font-size: 0.88rem;
+            line-height: 1.45;
+            color: #e0e0e0;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .navigation-panel {
+            margin-top: 10px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
 
         /* Tier 3 Index & Controls */
-        .index-panel { flex: 0.8; }
-        .index-panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 4px; }
-        .index-panel h3 { font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted); }
-        .node-index-list { display: flex; flex-direction: column; gap: 5px; overflow-y: auto; flex: 1; }
+        .index-panel {
+            flex: 0.8;
+        }
 
-        .nav-btn { background-color: #333; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 600; font-size: 0.8rem; }
-        .nav-btn.action-btn { background-color: var(--accent-blue); }
-        .nav-btn.info-btn { background-color: #555; font-size: 0.72rem; padding: 4px 8px; }
-        .index-item { display: flex; justify-content: space-between; align-items: center; background: #242424; padding: 8px 12px; border-radius: 6px; border: 1px solid #333; cursor: pointer; font-size: 0.8rem; }
-        .index-item.active { background: var(--active-node-bg); border-color: var(--accent-blue); font-weight: bold; }
-        .index-item-phase { font-size: 0.65rem; background: #111; padding: 2px 6px; border-radius: 4px; color: var(--text-muted); }
+        .index-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+        }
+
+        .index-panel h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .node-index-list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .nav-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .nav-btn.action-btn {
+            background-color: var(--accent-blue);
+        }
+
+        .nav-btn.info-btn {
+            background-color: #555;
+            font-size: 0.72rem;
+            padding: 4px 8px;
+        }
+
+        .index-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #242424;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .index-item.active {
+            background: var(--active-node-bg);
+            border-color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        .index-item-phase {
+            font-size: 0.65rem;
+            background: #111;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--text-muted);
+        }
 
         /* Documentation Schema Modal */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 100; display: none; justify-content: center; align-items: center; padding: 20px; }
-        .modal-box { background: var(--panel-bg); border: 1px solid #444; max-width: 700px; width: 100%; max-height: 85vh; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; }
-        .modal-body { overflow-y: auto; font-size: 0.85rem; line-height: 1.5; color: #ddd; margin-top: 15px; }
-        .schema-table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.8rem; }
-        .schema-table th, .schema-table td { border: 1px solid #444; padding: 6px 10px; text-align: left; }
-        .schema-table th { background: #111; color: var(--accent-green); }
-        .code-block { background: #0b0b0b; padding: 10px; border-radius: 6px; font-family: monospace; color: #62ff86; overflow-x: auto; margin: 10px 0; }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 100;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-box {
+            background: var(--panel-bg);
+            border: 1px solid #444;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #ddd;
+            margin-top: 15px;
+        }
+
+        .schema-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.8rem;
+        }
+
+        .schema-table th,
+        .schema-table td {
+            border: 1px solid #444;
+            padding: 6px 10px;
+            text-align: left;
+        }
+
+        .schema-table th {
+            background: #111;
+            color: var(--accent-green);
+        }
+
+        .code-block {
+            background: #0b0b0b;
+            padding: 10px;
+            border-radius: 6px;
+            font-family: monospace;
+            color: #62ff86;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="app-container">
         <div class="left-column">
-            <iframe id="strategyIframe" class="strategy-iframe" src="about:blank" sandbox="allow-scripts allow-same-origin"></iframe>
+            <iframe id="strategyIframe" class="strategy-iframe" src="about:blank"
+                sandbox="allow-scripts allow-same-origin"></iframe>
         </div>
 
         <div class="right-column">
@@ -134,141 +496,189 @@
         <div class="modal-box">
             <h2 style="color: var(--accent-green); font-size: 1.25rem;">JSON State Data Architecture Specification</h2>
             <div class="modal-body">
-                <p>The application engine reads structural data patterns asynchronously from an external array profile loaded directly inside <code>data.json</code>.</p>
-                
+                <p>The application engine reads structural data patterns asynchronously from an external array profile
+                    loaded directly inside <code>data.json</code>.</p>
+
                 <h4 style="margin-top: 12px; color: var(--accent-blue);">Root Node Structure Parameters</h4>
                 <table class="schema-table">
-                    <thead><tr><th>Key Field</th><th>Type</th><th>Functional Purpose / Example Representation</th></tr></thead>
+                    <thead>
+                        <tr>
+                            <th>Key Field</th>
+                            <th>Type</th>
+                            <th>Functional Purpose / Example Representation</th>
+                        </tr>
+                    </thead>
                     <tbody>
-                        <tr><td><code>nodeId</code></td><td>String</td><td>Unique ID reference hook used for state tree traversal.</td></tr>
-                        <tr><td><code>title</code></td><td>String</td><td>Header label printed atop the text strategy window component.</td></tr>
-                        <tr><td><code>phase</code></td><td>String</td><td>Strategic validation tag rendered within tracking logs (e.g. <code>"PREFLOP"</code>).</td></tr>
-                        <tr><td><code>pot</code></td><td>String</td><td>Total accumulation value text (e.g. <code>"22.50 BB"</code>).</td></tr>
-                        <tr><td><code>communityCards</code></td><td>Array</td><td>Street textures using lower-case suit modifiers (e.g. <code>["As", "9h", "2d"]</code>).</td></tr>
-                        <tr><td><code>displayText</code></td><td>String</td><td>Displayable text about the node.</td></tr>
-                        <tr><td><code>externalUrl</code></td><td>String</td><td>Source path safely piped through the isolated frame viewport interface.</td></tr>
-                        <tr><td><code>players</code></td><td>Array</td><td>Nested collection containing 6 explicit position state configurations.</td></tr>
-                        <tr><td><code>choices</code></td><td>Array</td><td>Options mapping to child nodes target IDs.</td></tr>
+                        <tr>
+                            <td><code>nodeId</code></td>
+                            <td>String</td>
+                            <td>Unique ID reference hook used for state tree traversal.</td>
+                        </tr>
+                        <tr>
+                            <td><code>title</code></td>
+                            <td>String</td>
+                            <td>Header label printed atop the text strategy window component.</td>
+                        </tr>
+                        <tr>
+                            <td><code>phase</code></td>
+                            <td>String</td>
+                            <td>Strategic validation tag rendered within tracking logs (e.g. <code>"PREFLOP"</code>).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>pot</code></td>
+                            <td>String</td>
+                            <td>Total accumulation value text (e.g. <code>"22.50 BB"</code>).</td>
+                        </tr>
+                        <tr>
+                            <td><code>communityCards</code></td>
+                            <td>Array</td>
+                            <td>Street textures using lower-case suit modifiers (e.g. <code>["As", "9h", "2d"]</code>).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><code>displayText</code></td>
+                            <td>String</td>
+                            <td>Displayable text about the node.</td>
+                        </tr>
+                        <tr>
+                            <td><code>externalUrl</code></td>
+                            <td>String</td>
+                            <td>Source path safely piped through the isolated frame viewport interface.</td>
+                        </tr>
+                        <tr>
+                            <td><code>players</code></td>
+                            <td>Array</td>
+                            <td>Nested collection containing 6 explicit position state configurations.</td>
+                        </tr>
+                        <tr>
+                            <td><code>choices</code></td>
+                            <td>Array</td>
+                            <td>Options mapping to child nodes target IDs.</td>
+                        </tr>
                     </tbody>
                 </table>
 
                 <h4 style="margin-top: 15px; color: var(--accent-blue);">Nested Player Object Definitions</h4>
-                <p>Every tree item array must hold exactly 6 positional entities corresponding to: <code>"UTG", "HJ", "CO", "BTN", "SB", "BB"</code>.</p>
+                <p>Every tree item array must hold exactly 6 positional entities corresponding to:
+                    <code>"UTG", "HJ", "CO", "BTN", "SB", "BB"</code>.
+                </p>
                 <div class="code-block">
-{
-  "position": "BB",
-  "isActive": true,
-  "isTurn": true,
-  "stackSize": "89.00 BB",
-  "currentBet": "11.00 BB",
-  "holeCards": ["Ah", "Kh"],
-  "isHero": true
-}
+                    {
+                    "position": "BB",
+                    "isActive": true,
+                    "isTurn": true,
+                    "stackSize": "89.00 BB",
+                    "currentBet": "11.00 BB",
+                    "holeCards": ["Ah", "Kh"],
+                    "isHero": true
+                    }
                 </div>
             </div>
-            <button class="nav-btn" style="margin-top: 15px; width: 100%; background: #c0392b;" onclick="toggleModal(false)">Dismiss Document View</button>
+            <button class="nav-btn" style="margin-top: 15px; width: 100%; background: #c0392b;"
+                onclick="toggleModal(false)">Dismiss Document View</button>
         </div>
     </div>
-    
-<script>
-   let gameTree = [];
-let currentNode = null;
 
-async function initializeTreeData() {
-    try {
-        const response = await fetch('./data.json'); 
-        if (!response.ok) throw new Error(`HTTP network error code detected: ${response.status}`);
-        
-        gameTree = await response.json();
-        if (gameTree.length > 0) {
-            currentNode = gameTree[0];
-            renderApplicationState(currentNode);
-        }
-    } catch (error) {
-        console.error("Critical Failure - JSON Matrix could not load:", error);
-        document.getElementById('nodeTitle').innerText = "Data Initialization Blocked";
-        document.getElementById('nodeDescription').innerHTML = `
+    <script>
+        let gameTree = [];
+        let currentNode = null;
+
+        async function initializeTreeData() {
+            try {
+                const response = await fetch('./data.json');
+                if (!response.ok) throw new Error(`HTTP network error code detected: ${response.status}`);
+
+                gameTree = await response.json();
+                if (gameTree.length > 0) {
+                    currentNode = gameTree[0];
+                    renderApplicationState(currentNode);
+                }
+            } catch (error) {
+                console.error("Critical Failure - JSON Matrix could not load:", error);
+                document.getElementById('nodeTitle').innerText = "Data Initialization Blocked";
+                document.getElementById('nodeDescription').innerHTML = `
             <span style="color:#e74c3c; font-weight:bold;">Unable to read file: data.json</span><br><br>
             <strong>Troubleshooting Steps:</strong><br>
             1. Ensure <code>data.json</code> is saved in the exact same folder as this file.<br>
             2. If deployed to GitHub Pages, ensure you committed the lowercase filename accurately.
         `;
 
-        // FIXED: Targeted an existing element ('pokerTable') instead of the missing 'tableWrapper'
-        const tableErr = document.createElement('div');
-        tableErr.className = 'error-overlay';
-        tableErr.style.cssText = "position:absolute; color:#ff4d4d; font-weight:bold; background:rgba(0,0,0,0.8); padding:10px; border-radius:8px;";
-        tableErr.innerText = "Error: Awaiting data.json stream over active host.";
-        document.getElementById('pokerTable').appendChild(tableErr);
-    }
-}
-
-// Utility mapper to avoid writing duplicate objects inline
-const SUIT_MAP = {
-    'h': { className: 'hearts', symbol: '♥' },
-    'd': { className: 'diamonds', symbol: '♦' },
-    'c': { className: 'clubs', symbol: '♣' },
-    's': { className: 'spades', symbol: '♠' }
-};
-
-function parseCardHtml(cardStr) {
-    if (cardStr === '??') return `<div class="card card-back"></div>`;
-    
-    const suitLetter = cardStr.slice(-1);
-    const value = cardStr.substring(0, cardStr.length - 1);
-    const suitData = SUIT_MAP[suitLetter] || { className: '', symbol: '' };
-    
-    return `<div class="card ${suitData.className}">${value}<br>${suitData.symbol}</div>`;
-}
-
-function generateChipStackHtml(betString) {
-    const numVal = parseFloat(betString);
-    if (isNaN(numVal) || numVal <= 0) return '';
-    
-    let chipColor = '#dcdde1';
-    if (numVal >= 1 && numVal < 2.5) chipColor = '#e74c3c';
-    if (numVal >= 2.5 && numVal < 10) chipColor = '#2980b9';
-    if (numVal >= 10) chipColor = '#2c3e50';
-
-    let dynamicStackCount = 1;
-    if (numVal > 1.5) dynamicStackCount = 2;
-    if (numVal >= 2.5) dynamicStackCount = 3;
-    if (numVal >= 8) dynamicStackCount = 4;
-    if (numVal >= 11) dynamicStackCount = 5;
-
-    let htmlString = '<div class="chip-stack">';
-    for (let i = 0; i < dynamicStackCount; i++) {
-        htmlString += `<div class="poker-chip" style="background: ${chipColor}; bottom: ${i * 2.5}px; z-index: ${i};"></div>`;
-    }
-    return htmlString + '</div>';
-}
-
-function renderApplicationState(node) {
-    document.getElementById('nodeTitle').innerText = node.title;
-    document.getElementById('nodeDescription').innerText = node.description || node.displayText;
-    document.getElementById('potDisplay').innerText = `Pot: ${node.pot}`;
-
-    const playersContainer = document.getElementById('playersContainer');
-    const betsContainer = document.getElementById('betsContainer');
-    const cardsContainer = document.getElementById('communityCardsContainer');
-    
-    // Build strings in memory to optimize paint/render steps
-    let playersHtml = '';
-    let betsHtml = '';
-
-    if (!node.communityCards || node.communityCards.length === 0) {
-        cardsContainer.innerHTML = `<span style="color:rgba(255,255,255,0.2); font-size:0.7rem; margin-top:18px; font-weight:bold;">PREFLOP</span>`;
-    } else {
-        cardsContainer.innerHTML = node.communityCards.map(parseCardHtml).join('');
-    }
-
-    node.players.forEach(player => {
-        let holeCardsHtml = '';
-        if (player.isActive && player.holeCards) {
-            holeCardsHtml = player.holeCards.map(parseCardHtml).join('');
+                // FIXED: Targeted an existing element ('pokerTable') instead of the missing 'tableWrapper'
+                const tableErr = document.createElement('div');
+                tableErr.className = 'error-overlay';
+                tableErr.style.cssText = "position:absolute; color:#ff4d4d; font-weight:bold; background:rgba(0,0,0,0.8); padding:10px; border-radius:8px;";
+                tableErr.innerText = "Error: Awaiting data.json stream over active host.";
+                document.getElementById('pokerTable').appendChild(tableErr);
+            }
         }
 
-        playersHtml += `
+        // Utility mapper to avoid writing duplicate objects inline
+        const SUIT_MAP = {
+            'h': { className: 'hearts', symbol: '♥' },
+            'd': { className: 'diamonds', symbol: '♦' },
+            'c': { className: 'clubs', symbol: '♣' },
+            's': { className: 'spades', symbol: '♠' }
+        };
+
+        function parseCardHtml(cardStr) {
+            if (cardStr === '??') return `<div class="card card-back"></div>`;
+
+            const suitLetter = cardStr.slice(-1);
+            const value = cardStr.substring(0, cardStr.length - 1);
+            const suitData = SUIT_MAP[suitLetter] || { className: '', symbol: '' };
+
+            return `<div class="card ${suitData.className}">${value}<br>${suitData.symbol}</div>`;
+        }
+
+        function generateChipStackHtml(betString) {
+            const numVal = parseFloat(betString);
+            if (isNaN(numVal) || numVal <= 0) return '';
+
+            let chipColor = '#dcdde1';
+            if (numVal >= 1 && numVal < 2.5) chipColor = '#e74c3c';
+            if (numVal >= 2.5 && numVal < 10) chipColor = '#2980b9';
+            if (numVal >= 10) chipColor = '#2c3e50';
+
+            let dynamicStackCount = 1;
+            if (numVal > 1.5) dynamicStackCount = 2;
+            if (numVal >= 2.5) dynamicStackCount = 3;
+            if (numVal >= 8) dynamicStackCount = 4;
+            if (numVal >= 11) dynamicStackCount = 5;
+
+            let htmlString = '<div class="chip-stack">';
+            for (let i = 0; i < dynamicStackCount; i++) {
+                htmlString += `<div class="poker-chip" style="background: ${chipColor}; bottom: ${i * 2.5}px; z-index: ${i};"></div>`;
+            }
+            return htmlString + '</div>';
+        }
+
+        function renderApplicationState(node) {
+            document.getElementById('nodeTitle').innerText = node.title;
+            document.getElementById('nodeDescription').innerText = node.description || node.displayText;
+            document.getElementById('potDisplay').innerText = `Pot: ${node.pot}`;
+
+            const playersContainer = document.getElementById('playersContainer');
+            const betsContainer = document.getElementById('betsContainer');
+            const cardsContainer = document.getElementById('communityCardsContainer');
+
+            // Build strings in memory to optimize paint/render steps
+            let playersHtml = '';
+            let betsHtml = '';
+
+            if (!node.communityCards || node.communityCards.length === 0) {
+                cardsContainer.innerHTML = `<span style="color:rgba(255,255,255,0.2); font-size:0.7rem; margin-top:18px; font-weight:bold;">PREFLOP</span>`;
+            } else {
+                cardsContainer.innerHTML = node.communityCards.map(parseCardHtml).join('');
+            }
+
+            node.players.forEach(player => {
+                let holeCardsHtml = '';
+                if (player.isActive && player.holeCards) {
+                    holeCardsHtml = player.holeCards.map(parseCardHtml).join('');
+                }
+
+                playersHtml += `
             <div class="player-seat ${player.isTurn ? 'active-turn' : ''} ${player.isActive ? '' : 'inactive'}" data-seat="${player.position}">
                 <div class="seat-position">${player.position} ${player.isHero ? '(Hero)' : ''}</div>
                 <div class="seat-stack">${player.stackSize}</div>
@@ -276,68 +686,69 @@ function renderApplicationState(node) {
             </div>
         `;
 
-        if (parseFloat(player.currentBet) > 0) {
-            betsHtml += `
+                if (parseFloat(player.currentBet) > 0) {
+                    betsHtml += `
                 <div class="bet-indicator" data-bet="${player.position}">
                     ${generateChipStackHtml(player.currentBet)}
                     <span>${player.currentBet}</span>
                 </div>
             `;
+                }
+            });
+
+            playersContainer.innerHTML = playersHtml;
+            betsContainer.innerHTML = betsHtml;
+
+            // Render Navigation Options efficiently
+            const controls = document.getElementById('navigationControls');
+            controls.innerHTML = '';
+
+            node.choices.forEach(choice => {
+                const btn = document.createElement('button');
+                btn.className = "nav-btn action-btn";
+                btn.innerText = choice.text;
+                btn.onclick = () => jumpToNodeById(choice.nextNodeId);
+                controls.appendChild(btn);
+            });
+
+            // Safely update framework location context
+            const iframe = document.getElementById('strategyIframe');
+            const targetUrl = node.externalUrl || 'about:blank';
+            if (iframe.contentWindow) {
+                iframe.contentWindow.location.replace(targetUrl);
+            } else {
+                iframe.src = targetUrl;
+            }
+
+            renderNodeIndexList();
         }
-    });
 
-    playersContainer.innerHTML = playersHtml;
-    betsContainer.innerHTML = betsHtml;
+        function jumpToNodeById(id) {
+            const targetNode = gameTree.find(n => n.nodeId === id);
+            if (targetNode) {
+                currentNode = targetNode;
+                renderApplicationState(currentNode);
+            }
+        }
 
-    // Render Navigation Options efficiently
-    const controls = document.getElementById('navigationControls');
-    controls.innerHTML = '';
-    
-    node.choices.forEach(choice => {
-        const btn = document.createElement('button');
-        btn.className = "nav-btn action-btn";
-        btn.innerText = choice.text;
-        btn.onclick = () => jumpToNodeById(choice.nextNodeId);
-        controls.appendChild(btn);
-    });
+        function renderNodeIndexList() {
+            const indexContainer = document.getElementById('nodeIndexList');
+            indexContainer.innerHTML = '';
+            gameTree.forEach(node => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = `index-item ${node.nodeId === currentNode.nodeId ? 'active' : ''}`;
+                itemDiv.innerHTML = `<span>${node.title}</span><span class="index-item-phase">${node.phase}</span>`;
+                itemDiv.onclick = () => jumpToNodeById(node.nodeId);
+                indexContainer.appendChild(itemDiv);
+            });
+        }
 
-    // Safely update framework location context
-    const iframe = document.getElementById('strategyIframe');
-    const targetUrl = node.externalUrl || 'about:blank';
-    if (iframe.contentWindow) {
-        iframe.contentWindow.location.replace(targetUrl);
-    } else {
-        iframe.src = targetUrl;
-    }
+        function toggleModal(open) {
+            document.getElementById('schemaModal').style.display = open ? 'flex' : 'none';
+        }
 
-    renderNodeIndexList();
-}
-
-function jumpToNodeById(id) {
-    const targetNode = gameTree.find(n => n.nodeId === id);
-    if (targetNode) {
-        currentNode = targetNode;
-        renderApplicationState(currentNode);
-    }
-}
-
-function renderNodeIndexList() {
-    const indexContainer = document.getElementById('nodeIndexList');
-    indexContainer.innerHTML = '';
-    gameTree.forEach(node => {
-        const itemDiv = document.createElement('div');
-        itemDiv.className = `index-item ${node.nodeId === currentNode.nodeId ? 'active' : ''}`;
-        itemDiv.innerHTML = `<span>${node.title}</span><span class="index-item-phase">${node.phase}</span>`;
-        itemDiv.onclick = () => jumpToNodeById(node.nodeId);
-        indexContainer.appendChild(itemDiv);
-    });
-}
-
-function toggleModal(open) {
-    document.getElementById('schemaModal').style.display = open ? 'flex' : 'none';
-}
-
-document.addEventListener("DOMContentLoaded", initializeTreeData);
+        document.addEventListener("DOMContentLoaded", initializeTreeData);
     </script>
 </body>
+
 </html>
