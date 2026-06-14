@@ -5,7 +5,7 @@
         "phase": "PREFLOP",
         "pot": "0.00 BB",
         "communityCards": [],
-        "externalUrl": "4Bet_SB_BB.html", 
+        "externalUrl": "", 
         "displayText": "-Facing a 4Bet OOP is not a great node. Once we face a 4B we shift from a high-EV 3B spot to one where we just want to lose as little as possible.\n test",
         "players": [
             { "position": "BTN", "isActive": true, "isTurn": false, "stackSize": "77.00 BB", "currentBet": "23.00 BB", "holeCards": ["??", "??"], "isHero": false },
@@ -26,7 +26,7 @@
         "phase": "PREFLOP",
         "pot": "0.00 BB",
         "communityCards": [],
-        "externalUrl": "https://example.com/charts/bb-vs-btn", 
+        "externalUrl": "4Bet_SB_BB.html"", 
         "displayText": "Facing a 4Bet OOP is not a great node. Once we face a 4B we shift from a high-EV 3B spot to one where we just want to lose as little as possible.",
         "players": [
             { "position": "BTN", "isActive": true, "isTurn": false, "stackSize": "77.00 BB", "currentBet": "23.00 BB", "holeCards": ["??", "??"], "isHero": false },
