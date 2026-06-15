@@ -44,7 +44,7 @@
         "title": "Preflop Facing 4Bet OOP",
         "phase": "PREFLOP",
         "pot": "47.00 BB",
-        "communityCards": ["??", "??","??"],
+        "communityCards": [],
         "externalUrl": "4Bet_SB_BB.html", 
         "displayText": "Calling 4Bet OOP.",
         "players": [
