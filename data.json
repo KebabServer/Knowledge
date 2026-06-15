@@ -41,7 +41,7 @@
     },
     {
         "nodeId": "preflop_SB_vs_BTN_4Bet",
-        "title": "Preflop Small Blind Facing Button 4Bet",
+        "title": "Preflop Facing 4Bet OOP",
         "phase": "PREFLOP",
         "pot": "47.00 BB",
         "communityCards": ["??", "??","??"],
