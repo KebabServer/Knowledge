@@ -48,9 +48,9 @@
         "externalUrl": "4Bet_SB_BB.html", 
         "displayText": "Calling 4Bet OOP.",
         "players": [
-            { "position": "BTN", "isActive": true, "isTurn": false, "stackSize": "77.00 BB", "currentBet": "0.00 BB", "holeCards": ["??", "??"], "isHero": false },
-            { "position": "SB", "isActive": true, "isTurn": true, "stackSize": "77.00 BB", "currentBet": "0.00 BB", "holeCards": ["??", "??"], "isHero": true },
-            { "position": "BB", "isActive": false, "isTurn": false, "stackSize": "99.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
+            { "position": "BTN", "isActive": true, "isTurn": false, "stackSize": "77.00 BB", "currentBet": "23.00 BB", "holeCards": ["??", "??"], "isHero": false },
+            { "position": "SB", "isActive": true, "isTurn": true, "stackSize": "89.00 BB", "currentBet": "11.00 BB", "holeCards": ["??", "??"], "isHero": true },
+            { "position": "BB", "isActive": false, "isTurn": false, "stackSize": "99.00 BB", "currentBet": "1.00 BB", "holeCards": null, "isHero": false },
             { "position": "UTG", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
             { "position": "HJ", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
             { "position": "CO", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false }
