@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Three High-EV Lessons</h1>
+        </header>
+        <main>
+            <article>
+                <ol>
+                    <li>1. Take advanrage of face up range chop pot spots</li>
+                    <ul>
+                        <li><b>Don't</b> chop when they have <b>too many folds</b></li>
+                        <li>Look for nodes where a particular opponent <b>doesn't slowplay enough OOP</b></li>
+                    </ul>
+                    <li>Always take your fold equity <b>when you have a huge draw</b> and your opponent has a lot of
+                        potential folds<ul>
+                            <li><b>Plan A:</b> Think \"How can i <b>win without showdown?</b>\"</li>
+                            <li><b>Plan B:</b> The draw coming in</li>
+                        </ul>
+                    </li>
+                    <li>Don't be afraid to make heavy exploitative adjustments<ul>
+                            <li><b>Pay attention</b> to showdowns; note <b>strong deviations</b> or tendencies</li>
+                        </ul>
+                    </li>
+                </ol>
+            </article>
+        </main>
+    </div>
+
+</body>
+
+</html>
