@@ -6,5 +6,13 @@
         "externalUrl": "rsc/Lesson_1_Finding_River_Leads_OOP.html", 
         "displayText": "",
         "choices": []
-    }    
+    },
+    {
+        "nodeId": "Lesson_2_Calling_vs_Polarization",
+        "title": "Calling vs Polarization",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_2_Calling_vs_Polarization.html", 
+        "displayText": "",
+        "choices": []
+    }  
 ]
