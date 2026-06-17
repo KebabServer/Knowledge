@@ -2,7 +2,7 @@
     {
         "nodeId": "Lesson_1_Finding_River_Leads_OOP",
         "title": "Lesson 1: Finding Leads OOP with Strong Hands when your Opponent Lacks Bluffs",
-        "phase": "Max Exploit Academy - Lesson 1",
+        "phase": "Max Exploit Academy",
         "displayText": "",
         "externalUrl": "rsc/Lesson_1_Finding_River_Leads_OOP.html", 
         "choices": []
@@ -17,18 +17,58 @@
     },
     {
         "nodeId": "Lesson_3_Expanding_XR_Range",
-        "title": "Lesson 3: ",
+        "title": "Lesson 3: Expanding Your Bluff Check-Raises (vs players who C-bet or fold too much)",
         "phase": "Max Exploit Academy",
         "displayText": "",
         "externalUrl": "rsc/Lesson_3_Expanding_XR_Range.html", 
         "choices": []
     },
     {
-        "nodeId": "",
-        "title": "Lesson 2:",
+        "nodeId": "Lesson_4_Dont_Need_The_Nuts_To_Overbet",
+        "title": "Lesson 4: You Don't Need the Nuts to Overbet (You Just Need the Best Hand)",
         "phase": "Max Exploit Academy",
         "displayText": "",
-        "externalUrl": "rsc/.html", 
+        "externalUrl": "rsc/Lesson_4_Dont_Need_The_Nuts_To_Overbet.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_5_The_Art_of_Folding",
+        "title": "Lesson 5: The Art of Folding",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_5_The_Art_of_Folding.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_6_Exploitative_All_Ins",
+        "title": "Lesson 6: Exploitative Node-Locked All-Ins",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_6_Exploitative_All_Ins.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_4_Dont_Need_The_Nuts_To_Overbet",
+        "title": "Lesson 4: ",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_4_Dont_Need_The_Nuts_To_Overbet.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_7_Three_High_EV_Lessons",
+        "title": "Lesson 7: Three High-EV Lessons",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_7_Three_High_EV_Lessons.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_21_Facing_4Bet_OOP_Splitting_Raise_Ranges",
+        "title": "Lesson 21: Facing 4Bet OOP: Splitting X/R Ranges into Small/Big Sizes. How to do it?",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_21_Facing_4Bet_OOP_Splitting_Raise_Ranges.html", 
         "choices": []
     } 
 ]
