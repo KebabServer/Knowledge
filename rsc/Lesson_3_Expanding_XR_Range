@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>PExpanding Your Bluff Check-Raises (vs players who C-bet or fold too much)</h1>
+        </header>
+        <main>
+            <article>
+                <p>More bluff check-raising a great exploit vs players who c-bet the flop with too weak of a range -
+                    even better if they overfold on later streets.</p>
+                <h2>Things to Look For</h2>
+                <p> Juice spots! Are they c-betting too much? Range betting boards they shouldn't?</p>
+                <h3>Hand Qualities</h3>
+                <ol>
+                    <li>Make many better hands <b>fold</b></li>
+                    <li>Interacts with the board such that you'll be able to <b>barrel equity-driven</b> on a lot of
+                        turns</li>
+                    <li>Has the potential to turn or river a <b>value-bettable</b> hand </li>
+                    <li><b>Blocks</b> villain's calling range (on the flop or on future streets)</li>
+                    <li>\"Difficult\" bluffs - <b>the harder it is to find bluff</b> in a spot, <b>the higher-EV</b>
+                        your bluffs will be</li>
+                    <li>\"Good\" spots - <b>you will get called</b>, but you can increase your chances by choosing your
+                        spots (and player profiles) well</li>
+                </ol>
+
+
+            </article>
+        </main>
+    </div>
+
+</body>
+
+</html>
