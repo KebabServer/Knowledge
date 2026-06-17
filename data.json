@@ -1,62 +1,10 @@
 [
     {
-        "nodeId": "default",
-        "title": "default",
-        "phase": "PREFLOP",
-        "pot": "0.00 BB",
-        "communityCards": [],
-        "externalUrl": "", 
+        "nodeId": "Lesson_1_Finding_River_Leads_OOP",
+        "title": "Finding Leads OOP with Strong Hands when your Opponent Lacks Bluffs",
+        "externalUrl": "/Lesson_1_Finding_River_Leads_OOP.html", 
         "displayText": "",
-        "players": [
-            { "position": "BTN", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": true },
-            { "position": "SB", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "BB", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "UTG", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "HJ", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "CO", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false }
-        ],
         "choices": [
-            { "text": "default", "nextNodeId": "default" },
-            { "text": "default", "nextNodeId": "default" }
         ]
-    },
-     {
-        "nodeId": "Playing_Draws",
-        "title": "Playing Draws",
-        "phase": "PREFLOP",
-        "pot": "0.00 BB",
-        "communityCards": [],
-        "externalUrl": "Playing_Draws.html", 
-        "displayText": "",
-        "players": [
-            { "position": "BTN", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": true },
-            { "position": "SB", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "BB", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "UTG", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "HJ", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "CO", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false }
-        ],
-         "choices": [
-         ]
-    },
-    {
-        "nodeId": "preflop_SB_vs_BTN_4Bet",
-        "title": "Preflop Facing 4Bet OOP",
-        "phase": "PREFLOP",
-        "pot": "47.00 BB",
-        "communityCards": [],
-        "externalUrl": "4Bet_SB_BB.html", 
-        "displayText": "Calling 4Bet OOP.",
-        "players": [
-            { "position": "BTN", "isActive": true, "isTurn": false, "stackSize": "77.00 BB", "currentBet": "23.00 BB", "holeCards": ["??", "??"], "isHero": false },
-            { "position": "SB", "isActive": true, "isTurn": true, "stackSize": "89.00 BB", "currentBet": "11.00 BB", "holeCards": ["??", "??"], "isHero": true },
-            { "position": "BB", "isActive": false, "isTurn": false, "stackSize": "99.00 BB", "currentBet": "1.00 BB", "holeCards": null, "isHero": false },
-            { "position": "UTG", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "HJ", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false },
-            { "position": "CO", "isActive": false, "isTurn": false, "stackSize": "100.00 BB", "currentBet": "0.00 BB", "holeCards": null, "isHero": false }
-        ],
-         "choices": [
-         ]
-    }
-    
+    },    
 ]
