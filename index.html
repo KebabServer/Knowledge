@@ -342,7 +342,7 @@
 
         function renderApplicationState(node) {
             document.getElementById('nodeTitle').innerText = node.title;
-            document.getElementById('nodeDescription').innerText = node.description || node.displayText;
+            document.getElementById('nodeDescription').innerText = node.displayText;
 
             // Render Navigation Options efficiently
             const controls = document.getElementById('navigationControls');
