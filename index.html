@@ -9,8 +9,6 @@
         :root {
             --bg-color: #121212;
             --panel-bg: #1e1e1e;
-            --table-felt: #162a1c;
-            --table-border: #2e1f15;
             --text-main: #ffffff;
             --text-muted: #aaaaaa;
             --accent-green: #27ae60;
@@ -77,219 +75,30 @@
             overflow: hidden;
         }
 
-        /* Tier 1 Table */
-        .table-panel {
-            flex: 1.4;
+        /* Tier 1 Pot & Meta Data View */
+        .meta-panel {
+            flex: 0.4;
             background: #0d0d0d;
             justify-content: center;
             align-items: center;
             position: relative;
-            padding: 40px 55px;
-        }
-
-        .poker-table {
-            position: relative;
-            width: 100%;
-            max-width: 580px;
-            aspect-ratio: 2.1 / 1;
-            background-color: var(--table-felt);
-            border: 14px solid var(--table-border);
-            border-radius: 150px;
-            box-shadow: inset 0 0 45px rgba(0, 0, 0, 0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .table-center {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            z-index: 2;
+            padding: 20px;
         }
 
         .pot-display {
             background: rgba(0, 0, 0, 0.85);
-            padding: 4px 12px;
+            padding: 8px 20px;
             border-radius: 15px;
             border: 1px solid #444;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             color: #62ff86;
-        }
-
-        .community-cards {
-            display: flex;
-            gap: 5px;
-            min-height: 52px;
-        }
-
-        /* Seats & Cards Layout */
-        .player-seat {
-            position: absolute;
-            width: 105px;
-            background: rgba(20, 20, 20, 0.95);
-            border: 2px solid #444;
-            border-radius: 6px;
-            padding: 5px;
             text-align: center;
-            font-size: 0.75rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
-            z-index: 5;
-        }
-
-        .player-seat.inactive {
-            opacity: 0.2;
-            border-color: #222;
-        }
-
-        .player-seat.active-turn {
-            border-color: var(--accent-green);
-            box-shadow: 0 0 12px rgba(39, 174, 96, 0.6);
-        }
-
-        .seat-position {
-            font-weight: bold;
-            color: var(--text-muted);
-        }
-
-        .seat-stack {
-            color: #ffcc00;
-            font-weight: 600;
-            font-size: 0.7rem;
-        }
-
-        .hole-cards {
-            display: flex;
-            justify-content: center;
-            gap: 3px;
-            margin-top: 4px;
-            height: 26px;
-        }
-
-        .card {
-            width: 18px;
-            height: 26px;
-            background: white;
-            border-radius: 3px;
-            color: black;
-            font-weight: bold;
-            font-size: 0.65rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .card.card-back {
-            background: linear-gradient(135deg, #bdc3c7, #95a5a6);
-            border: 1px solid #7f8c8d;
-        }
-
-        .card.hearts,
-        .card.diamonds {
-            color: #e74c3c;
-        }
-
-        .card.clubs,
-        .card.spades {
-            color: #2c3e50;
-        }
-
-        /* Inward Bets Coordinates */
-        .bet-indicator {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(0, 0, 0, 0.75);
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: bold;
-            color: #fff;
-            border: 1px solid #444;
-            z-index: 10;
-        }
-
-        .chip-stack {
-            position: relative;
-            width: 14px;
-            height: 16px;
-        }
-
-        .poker-chip {
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            border: 1px dashed rgba(255, 255, 255, 0.7);
-        }
-
-        [data-seat="BTN"] {
-            top: -26px;
-            left: 20%;
-        }
-
-        [data-seat="SB"] {
-            top: -26px;
-            right: 20%;
-        }
-
-        [data-seat="BB"] {
-            top: 35%;
-            right: -45px;
-        }
-
-        [data-seat="UTG"] {
-            bottom: -26px;
-            right: 20%;
-        }
-
-        [data-seat="HJ"] {
-            bottom: -26px;
-            left: 20%;
-        }
-
-        [data-seat="CO"] {
-            top: 35%;
-            left: -45px;
-        }
-
-        [data-bet="BTN"] {
-            top: 38px;
-            left: 24%;
-        }
-
-        [data-bet="SB"] {
-            top: 38px;
-            right: 24%;
-        }
-
-        [data-bet="BB"] {
-            top: 44%;
-            right: 90px;
-        }
-
-        [data-bet="UTG"] {
-            bottom: 38px;
-            right: 24%;
-        }
-
-        [data-bet="HJ"] {
-            bottom: 38px;
-            left: 24%;
-        }
-
-        [data-bet="CO"] {
-            top: 44%;
-            left: 90px;
         }
 
         /* Tier 2 Narrative */
         .text-panel {
-            flex: 1;
+            flex: 1.4;
         }
 
         .text-panel h2 {
@@ -317,7 +126,7 @@
 
         /* Tier 3 Index & Controls */
         .index-panel {
-            flex: 0.8;
+            flex: 1;
         }
 
         .index-panel-header {
@@ -465,15 +274,8 @@
         </div>
 
         <div class="right-column">
-            <div class="panel table-panel">
-                <div class="poker-table" id="pokerTable">
-                    <div class="table-center">
-                        <div class="pot-display" id="potDisplay">Pot: 0 BB</div>
-                        <div class="community-cards" id="communityCardsContainer"></div>
-                    </div>
-                    <div id="playersContainer"></div>
-                    <div id="betsContainer"></div>
-                </div>
+            <div class="panel meta-panel" id="metaPanel">
+                <div class="pot-display" id="potDisplay">Pot: 0 BB</div>
             </div>
 
             <div class="panel text-panel">
@@ -522,19 +324,12 @@
                         <tr>
                             <td><code>phase</code></td>
                             <td>String</td>
-                            <td>Strategic validation tag rendered within tracking logs (e.g. <code>"PREFLOP"</code>).
-                            </td>
+                            <td>Strategic validation tag rendered within tracking logs (e.g. <code>"PREFLOP"</code>).</td>
                         </tr>
                         <tr>
                             <td><code>pot</code></td>
                             <td>String</td>
                             <td>Total accumulation value text (e.g. <code>"22.50 BB"</code>).</td>
-                        </tr>
-                        <tr>
-                            <td><code>communityCards</code></td>
-                            <td>Array</td>
-                            <td>Street textures using lower-case suit modifiers (e.g. <code>["As", "9h", "2d"]</code>).
-                            </td>
                         </tr>
                         <tr>
                             <td><code>displayText</code></td>
@@ -547,33 +342,12 @@
                             <td>Source path safely piped through the isolated frame viewport interface.</td>
                         </tr>
                         <tr>
-                            <td><code>players</code></td>
-                            <td>Array</td>
-                            <td>Nested collection containing 6 explicit position state configurations.</td>
-                        </tr>
-                        <tr>
                             <td><code>choices</code></td>
                             <td>Array</td>
                             <td>Options mapping to child nodes target IDs.</td>
                         </tr>
                     </tbody>
                 </table>
-
-                <h4 style="margin-top: 15px; color: var(--accent-blue);">Nested Player Object Definitions</h4>
-                <p>Every tree item array must hold exactly 6 positional entities corresponding to:
-                    <code>"UTG", "HJ", "CO", "BTN", "SB", "BB"</code>.
-                </p>
-                <div class="code-block">
-                    {
-                    "position": "BB",
-                    "isActive": true,
-                    "isTurn": true,
-                    "stackSize": "89.00 BB",
-                    "currentBet": "11.00 BB",
-                    "holeCards": ["Ah", "Kh"],
-                    "isHero": true
-                    }
-                </div>
             </div>
             <button class="nav-btn" style="margin-top: 15px; width: 100%; background: #c0392b;"
                 onclick="toggleModal(false)">Dismiss Document View</button>
@@ -598,106 +372,23 @@
                 console.error("Critical Failure - JSON Matrix could not load:", error);
                 document.getElementById('nodeTitle').innerText = "Data Initialization Blocked";
                 document.getElementById('nodeDescription').innerHTML = `
-            <span style="color:#e74c3c; font-weight:bold;">Unable to read file: data.json</span><br><br>
-            <strong>Troubleshooting Steps:</strong><br>
-            1. Ensure <code>data.json</code> is saved in the exact same folder as this file.<br>
-            2. If deployed to GitHub Pages, ensure you committed the lowercase filename accurately.
-        `;
+                    <span style="color:#e74c3c; font-weight:bold;">Unable to read file: data.json</span><br><br>
+                    <strong>Troubleshooting Steps:</strong><br>
+                    1. Ensure <code>data.json</code> is saved in the exact same folder as this file.<br>
+                    2. If deployed to GitHub Pages, ensure you committed the lowercase filename accurately.
+                `;
 
-                // FIXED: Targeted an existing element ('pokerTable') instead of the missing 'tableWrapper'
-                const tableErr = document.createElement('div');
-                tableErr.className = 'error-overlay';
-                tableErr.style.cssText = "position:absolute; color:#ff4d4d; font-weight:bold; background:rgba(0,0,0,0.8); padding:10px; border-radius:8px;";
-                tableErr.innerText = "Error: Awaiting data.json stream over active host.";
-                document.getElementById('pokerTable').appendChild(tableErr);
+                const metaErr = document.createElement('div');
+                metaErr.style.cssText = "color:#ff4d4d; font-weight:bold; padding:10px; font-size:0.8rem; text-align:center;";
+                metaErr.innerText = "Error: Awaiting data.json stream over active host.";
+                document.getElementById('metaPanel').appendChild(metaErr);
             }
-        }
-
-        // Utility mapper to avoid writing duplicate objects inline
-        const SUIT_MAP = {
-            'h': { className: 'hearts', symbol: '♥' },
-            'd': { className: 'diamonds', symbol: '♦' },
-            'c': { className: 'clubs', symbol: '♣' },
-            's': { className: 'spades', symbol: '♠' }
-        };
-
-        function parseCardHtml(cardStr) {
-            if (cardStr === '??') return `<div class="card card-back"></div>`;
-
-            const suitLetter = cardStr.slice(-1);
-            const value = cardStr.substring(0, cardStr.length - 1);
-            const suitData = SUIT_MAP[suitLetter] || { className: '', symbol: '' };
-
-            return `<div class="card ${suitData.className}">${value}<br>${suitData.symbol}</div>`;
-        }
-
-        function generateChipStackHtml(betString) {
-            const numVal = parseFloat(betString);
-            if (isNaN(numVal) || numVal <= 0) return '';
-
-            let chipColor = '#dcdde1';
-            if (numVal >= 1 && numVal < 2.5) chipColor = '#e74c3c';
-            if (numVal >= 2.5 && numVal < 10) chipColor = '#2980b9';
-            if (numVal >= 10) chipColor = '#2c3e50';
-
-            let dynamicStackCount = 1;
-            if (numVal > 1.5) dynamicStackCount = 2;
-            if (numVal >= 2.5) dynamicStackCount = 3;
-            if (numVal >= 8) dynamicStackCount = 4;
-            if (numVal >= 11) dynamicStackCount = 5;
-
-            let htmlString = '<div class="chip-stack">';
-            for (let i = 0; i < dynamicStackCount; i++) {
-                htmlString += `<div class="poker-chip" style="background: ${chipColor}; bottom: ${i * 2.5}px; z-index: ${i};"></div>`;
-            }
-            return htmlString + '</div>';
         }
 
         function renderApplicationState(node) {
             document.getElementById('nodeTitle').innerText = node.title;
             document.getElementById('nodeDescription').innerText = node.description || node.displayText;
             document.getElementById('potDisplay').innerText = `Pot: ${node.pot}`;
-
-            const playersContainer = document.getElementById('playersContainer');
-            const betsContainer = document.getElementById('betsContainer');
-            const cardsContainer = document.getElementById('communityCardsContainer');
-
-            // Build strings in memory to optimize paint/render steps
-            let playersHtml = '';
-            let betsHtml = '';
-
-            if (!node.communityCards || node.communityCards.length === 0) {
-                cardsContainer.innerHTML = `<span style="color:rgba(255,255,255,0.2); font-size:0.7rem; margin-top:18px; font-weight:bold;">PREFLOP</span>`;
-            } else {
-                cardsContainer.innerHTML = node.communityCards.map(parseCardHtml).join('');
-            }
-
-            node.players.forEach(player => {
-                let holeCardsHtml = '';
-                if (player.isActive && player.holeCards) {
-                    holeCardsHtml = player.holeCards.map(parseCardHtml).join('');
-                }
-
-                playersHtml += `
-            <div class="player-seat ${player.isTurn ? 'active-turn' : ''} ${player.isActive ? '' : 'inactive'}" data-seat="${player.position}">
-                <div class="seat-position">${player.position} ${player.isHero ? '(Hero)' : ''}</div>
-                <div class="seat-stack">${player.stackSize}</div>
-                <div class="hole-cards">${holeCardsHtml}</div>
-            </div>
-        `;
-
-                if (parseFloat(player.currentBet) > 0) {
-                    betsHtml += `
-                <div class="bet-indicator" data-bet="${player.position}">
-                    ${generateChipStackHtml(player.currentBet)}
-                    <span>${player.currentBet}</span>
-                </div>
-            `;
-                }
-            });
-
-            playersContainer.innerHTML = playersHtml;
-            betsContainer.innerHTML = betsHtml;
 
             // Render Navigation Options efficiently
             const controls = document.getElementById('navigationControls');
