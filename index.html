@@ -75,30 +75,9 @@
             overflow: hidden;
         }
 
-        /* Tier 1 Pot & Meta Data View */
-        .meta-panel {
-            flex: 0.4;
-            background: #0d0d0d;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            padding: 20px;
-        }
-
-        .pot-display {
-            background: rgba(0, 0, 0, 0.85);
-            padding: 8px 20px;
-            border-radius: 15px;
-            border: 1px solid #444;
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #62ff86;
-            text-align: center;
-        }
-
-        /* Tier 2 Narrative */
+        /* Tier 1 Narrative */
         .text-panel {
-            flex: 1.4;
+            flex: 1.5;
         }
 
         .text-panel h2 {
@@ -124,7 +103,7 @@
             flex-wrap: wrap;
         }
 
-        /* Tier 3 Index & Controls */
+        /* Tier 2 Index & Controls */
         .index-panel {
             flex: 1;
         }
@@ -252,16 +231,6 @@
             background: #111;
             color: var(--accent-green);
         }
-
-        .code-block {
-            background: #0b0b0b;
-            padding: 10px;
-            border-radius: 6px;
-            font-family: monospace;
-            color: #62ff86;
-            overflow-x: auto;
-            margin: 10px 0;
-        }
     </style>
 </head>
 
@@ -274,10 +243,6 @@
         </div>
 
         <div class="right-column">
-            <div class="panel meta-panel" id="metaPanel">
-                <div class="pot-display" id="potDisplay">Pot: 0 BB</div>
-            </div>
-
             <div class="panel text-panel">
                 <h2 id="nodeTitle">Loading Tree...</h2>
                 <div class="node-description" id="nodeDescription">Fetching structural database...</div>
@@ -327,11 +292,6 @@
                             <td>Strategic validation tag rendered within tracking logs (e.g. <code>"PREFLOP"</code>).</td>
                         </tr>
                         <tr>
-                            <td><code>pot</code></td>
-                            <td>String</td>
-                            <td>Total accumulation value text (e.g. <code>"22.50 BB"</code>).</td>
-                        </tr>
-                        <tr>
                             <td><code>displayText</code></td>
                             <td>String</td>
                             <td>Displayable text about the node.</td>
@@ -377,18 +337,12 @@
                     1. Ensure <code>data.json</code> is saved in the exact same folder as this file.<br>
                     2. If deployed to GitHub Pages, ensure you committed the lowercase filename accurately.
                 `;
-
-                const metaErr = document.createElement('div');
-                metaErr.style.cssText = "color:#ff4d4d; font-weight:bold; padding:10px; font-size:0.8rem; text-align:center;";
-                metaErr.innerText = "Error: Awaiting data.json stream over active host.";
-                document.getElementById('metaPanel').appendChild(metaErr);
             }
         }
 
         function renderApplicationState(node) {
             document.getElementById('nodeTitle').innerText = node.title;
             document.getElementById('nodeDescription').innerText = node.description || node.displayText;
-            document.getElementById('potDisplay').innerText = `Pot: ${node.pot}`;
 
             // Render Navigation Options efficiently
             const controls = document.getElementById('navigationControls');
