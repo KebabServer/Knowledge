@@ -2,7 +2,7 @@
     {
         "nodeId": "Lesson_1_Finding_River_Leads_OOP",
         "title": "Lesson 1: Finding Leads OOP with Strong Hands when your Opponent Lacks Bluffs",
-        "phase": "Max Exploit Academy",
+        "phase": "Max Exploit Academy - Lesson 1",
         "displayText": "",
         "externalUrl": "rsc/Lesson_1_Finding_River_Leads_OOP.html", 
         "choices": []
@@ -10,64 +10,25 @@
     {
         "nodeId": "Lesson_2_Calling_vs_Polarization",
         "title": "Lesson 2: Calling vs Polarization",
+        "phase": "Max Exploit Academy",
         "displayText": "",
         "externalUrl": "rsc/Lesson_2_Calling_vs_Polarization.html", 
         "choices": []
     },
     {
-        "nodeId": "",
-        "title": "Lesson 2:",
+        "nodeId": "Lesson_3_Expanding_XR_Range",
+        "title": "Lesson 3: ",
+        "phase": "Max Exploit Academy",
         "displayText": "",
-        "externalUrl": "rsc/.html", 
-        "displayText": "",
+        "externalUrl": "rsc/Lesson_3_Expanding_XR_Range.html", 
         "choices": []
     },
     {
         "nodeId": "",
         "title": "Lesson 2:",
+        "phase": "Max Exploit Academy",
         "displayText": "",
         "externalUrl": "rsc/.html", 
-        "displayText": "",
         "choices": []
-    },
-    {
-        "nodeId": "",
-        "title": "Lesson 2:",
-        "displayText": "",
-        "externalUrl": "rsc/.html", 
-        "displayText": "",
-        "choices": []
-    },
-    {
-        "nodeId": "",
-        "title": "Lesson 2:",
-        "displayText": "",
-        "externalUrl": "rsc/.html", 
-        "displayText": "",
-        "choices": []
-    },
-    {
-        "nodeId": "",
-        "title": "Lesson 2:",
-        "displayText": "",
-        "externalUrl": "rsc/.html", 
-        "displayText": "",
-        "choices": []
-    },
-    {
-        "nodeId": "",
-        "title": "Lesson 2:",
-        "displayText": "",
-        "externalUrl": "rsc/.html", 
-        "displayText": "",
-        "choices": []
-    },
-    {
-        "nodeId": "",
-        "title": "Lesson 2:",
-        "displayText": "",
-        "externalUrl": "rsc/.html", 
-        "displayText": "",
-        "choices": []
-    }     
+    } 
 ]
