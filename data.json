@@ -55,7 +55,7 @@
         "externalUrl": "rsc/Lesson_7_Three_High_EV_Lessons.html", 
         "choices": []
     },
-     {
+    {
         "nodeId": "Lesson_8_Finding_A_Raise_in_0EV_Call_Spots",
         "title": "Lesson 8: Finding a Raise in -EV or 0EV Call Spots",
         "phase": "Max Exploit Academy",
@@ -63,12 +63,36 @@
         "externalUrl": "rsc/Lesson_8_Finding_A_Raise_in_0EV_Call_Spots.html", 
         "choices": []
     },
-         {
+    {
         "nodeId": "Lesson_9_When_to_Flop_3Bet_Bluff",
         "title": "Lesson 9: When to Flop 3-Bet Bluff to Increase Your Hand's EV",
         "phase": "Max Exploit Academy",
         "displayText": "",
         "externalUrl": "rsc/Lesson_9_When_to_Flop_3Bet_Bluff.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_10_Finding_Unconventional_Overbet_Bluffs",
+        "title": "Lesson 10: Finding Unconventional Overbet Bluffs",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_10_Finding_Unconventional_Overbet_Bluffs.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_11_Playing_Dynamic_Ranges",
+        "title": "Lesson 11: Finding Unconventional Overbet Bluffs",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_11_Playing_Dynamic_Ranges.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_12_Playing_Dynamic_Ranges_Part2",
+        "title": "Lesson 12: Playing Dynamic Ranges Part 2",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_12_Playing_Dynamic_Ranges_Part2.html", 
         "choices": []
     },
     {
