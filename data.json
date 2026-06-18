@@ -60,7 +60,15 @@
         "title": "Lesson 8: Finding a Raise in -EV or 0EV Call Spots",
         "phase": "Max Exploit Academy",
         "displayText": "",
-        "externalUrl": "rsc/Lesson_8_Finding_A_Raise_in_0EV_Call_Spots.html.html", 
+        "externalUrl": "rsc/Lesson_8_Finding_A_Raise_in_0EV_Call_Spots.html", 
+        "choices": []
+    },
+         {
+        "nodeId": "Lesson_9_When_to_Flop_3Bet_Bluff",
+        "title": "Lesson 9: When to Flop 3-Bet Bluff to Increase Your Hand's EV",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_9_When_to_Flop_3Bet_Bluff.html", 
         "choices": []
     },
     {
