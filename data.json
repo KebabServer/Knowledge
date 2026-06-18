@@ -136,35 +136,27 @@
         "choices": []
     },
     {
-        "nodeId": "Lesson_12_Playing_Dynamic_Ranges_Part2",
-        "title": "Lesson 12: Playing Dynamic Ranges Part 2",
+        "nodeId": "Lesson_18_Attacking_Capped_Ranges_and_Imbalanced_Sizings",
+        "title": "Attacking Capped Ranges and Imbalanced Sizings",
         "phase": "Max Exploit Academy",
         "displayText": "",
-        "externalUrl": "rsc/Lesson_12_Playing_Dynamic_Ranges_Part2.html", 
+        "externalUrl": "rsc/Lesson_18_Attacking_Capped_Ranges_and_Imbalanced_Sizings.html", 
         "choices": []
     },
     {
-        "nodeId": "Lesson_12_Playing_Dynamic_Ranges_Part2",
-        "title": "Lesson 12: Playing Dynamic Ranges Part 2",
+        "nodeId": "Lesson_19_When_to_Give_Up",
+        "title": "When to Give Up",
         "phase": "Max Exploit Academy",
         "displayText": "",
-        "externalUrl": "rsc/Lesson_12_Playing_Dynamic_Ranges_Part2.html", 
+        "externalUrl": "rsc/Lesson_19_When_to_Give_Up.html", 
         "choices": []
     },
     {
-        "nodeId": "Lesson_12_Playing_Dynamic_Ranges_Part2",
-        "title": "Lesson 12: Playing Dynamic Ranges Part 2",
+        "nodeId": "Lesson_20_Range_Splitting_IP_vs_Checks_in_3BPs",
+        "title": "Range Splitting IP vs Checks (in 3BPs)",
         "phase": "Max Exploit Academy",
         "displayText": "",
-        "externalUrl": "rsc/Lesson_12_Playing_Dynamic_Ranges_Part2.html", 
-        "choices": []
-    },
-    {
-        "nodeId": "Lesson_12_Playing_Dynamic_Ranges_Part2",
-        "title": "Lesson 12: Playing Dynamic Ranges Part 2",
-        "phase": "Max Exploit Academy",
-        "displayText": "",
-        "externalUrl": "rsc/Lesson_12_Playing_Dynamic_Ranges_Part2.html", 
+        "externalUrl": "rsc/Lesson_20_Range_Splitting_IP_vs_Checks_in_3BPs.html", 
         "choices": []
     },
     {
@@ -174,5 +166,13 @@
         "displayText": "",
         "externalUrl": "rsc/Lesson_21_Facing_4Bet_OOP_Splitting_Raise_Ranges.html", 
         "choices": []
-    } 
+    },
+    {
+        "nodeId": "Lesson_22_The_Art_of_Note_Taking",
+        "title": "The Art of Note-Taking",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_22_The_Art_of_Note_Taking.html", 
+        "choices": []
+    }
 ]
