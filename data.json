@@ -96,6 +96,78 @@
         "choices": []
     },
     {
+        "nodeId": "Lesson_13_The_Art_of_Hero_Calling",
+        "title": "The Art of Hero Calling",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_13_The_Art_of_Hero_Calling.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_14_Three_High_EV_Concepts",
+        "title": "Three High EV Concepts",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_14_Three_High_EV_Concepts.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_15_Metagame_and_Game_Flow",
+        "title": "Metagame and Game Flow",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_15_Metagame_and_Game_Flow.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_16_Playing_Dynamic_Ranges_Tailored_to_Counter_Your_Opponent",
+        "title": "Lesson_16_Playing_Dynamic_Ranges_Tailored_to_Counter_Your_Opponent",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_16_Playing_Dynamic_Ranges_Tailored_to_Counter_Your_Opponent.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_17_Finding_Bluff_Raises_IP_vs_River_Bets",
+        "title": "Finding Bluff Raises IP vs River Bets",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_17_Finding_Bluff_Raises_IP_vs_River_Bets.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_12_Playing_Dynamic_Ranges_Part2",
+        "title": "Lesson 12: Playing Dynamic Ranges Part 2",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_12_Playing_Dynamic_Ranges_Part2.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_12_Playing_Dynamic_Ranges_Part2",
+        "title": "Lesson 12: Playing Dynamic Ranges Part 2",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_12_Playing_Dynamic_Ranges_Part2.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_12_Playing_Dynamic_Ranges_Part2",
+        "title": "Lesson 12: Playing Dynamic Ranges Part 2",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_12_Playing_Dynamic_Ranges_Part2.html", 
+        "choices": []
+    },
+    {
+        "nodeId": "Lesson_12_Playing_Dynamic_Ranges_Part2",
+        "title": "Lesson 12: Playing Dynamic Ranges Part 2",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_12_Playing_Dynamic_Ranges_Part2.html", 
+        "choices": []
+    },
+    {
         "nodeId": "Lesson_21_Facing_4Bet_OOP_Splitting_Raise_Ranges",
         "title": "Lesson 21: Facing 4Bet OOP: Splitting X/R Ranges into Small/Big Sizes. How to do it?",
         "phase": "Max Exploit Academy",
