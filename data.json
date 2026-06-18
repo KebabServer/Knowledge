@@ -55,6 +55,14 @@
         "externalUrl": "rsc/Lesson_7_Three_High_EV_Lessons.html", 
         "choices": []
     },
+     {
+        "nodeId": "Lesson_8_Finding_A_Raise_in_0EV_Call_Spots",
+        "title": "Lesson 8: Finding a Raise in -EV or 0EV Call Spots",
+        "phase": "Max Exploit Academy",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_8_Finding_A_Raise_in_0EV_Call_Spots.html.html", 
+        "choices": []
+    },
     {
         "nodeId": "Lesson_21_Facing_4Bet_OOP_Splitting_Raise_Ranges",
         "title": "Lesson 21: Facing 4Bet OOP: Splitting X/R Ranges into Small/Big Sizes. How to do it?",
