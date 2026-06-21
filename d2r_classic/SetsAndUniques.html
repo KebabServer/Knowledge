@@ -108,57 +108,44 @@
     </div>
 
     <script>
-    // 1. Configure your GitHub details
-    const UTILITY = {
-        username: "KebabServer",  // Change to your GitHub username
-        repo: "Knowledge",            // Change to your repository name
-        folderPath: "d2r_classic/SetsAndUniques"                      // Leave empty "" if images are in the root folder
-    };
+        // 1. MANUALLY ADD YOUR FILES HERE
+        // 'name' is what shows up in the sidebar. 
+        // 'path' is the local or web link to the image file.
+        const screenshots = [
+            { name: "Unique Sword", path: "d2r_classic/SetsAndUniques/sword.png" },
+            { name: "Set Armor", path: "d2r_classic/SetsAndUniques/armor.png" },
+            { name: "Example From Web", path: "https://example.com/image.png" }
+        ];
 
-    const fileListEl = document.getElementById('file-list');
-    const displayImg = document.getElementById('screenshot-display');
-    const placeholder = document.getElementById('placeholder');
+        const fileListEl = document.getElementById('file-list');
+        const displayImg = document.getElementById('screenshot-display');
+        const placeholder = document.getElementById('placeholder');
 
-    // 2. Fetch the file list automatically from GitHub's API
-    const apiUrl = `https://api.github.com/repos/${UTILITY.username}/${UTILITY.repo}/contents/${UTILITY.folderPath}`;
-
-    fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) throw new Error("Failed to fetch repository files.");
-            return response.json();
-        })
-        .then(files => {
-            // Filter out only PNG images
-            const pngFiles = files.filter(file => file.name.toLowerCase().endsWith('.png'));
-
-            if (pngFiles.length === 0) {
-                placeholder.textContent = "No .png screenshots found in this repository.";
-                return;
-            }
-
-            // 3. Build the UI loop dynamically
-            pngFiles.forEach(file => {
+        // Check if the array has items
+        if (screenshots.length === 0) {
+            placeholder.textContent = "No screenshots have been added to the list yet.";
+        } else {
+            // 2. Build the sidebar list dynamically from your array
+            screenshots.forEach(file => {
                 const li = document.createElement('li');
-                li.textContent = file.name.replace('.png', '');
+                li.textContent = file.name;
                 li.title = file.name;
 
                 li.addEventListener('click', () => {
+                    // Remove 'active' class from all items
                     document.querySelectorAll('#file-list li').forEach(el => el.classList.remove('active'));
+                    // Add 'active' class to clicked item
                     li.classList.add('active');
 
-                    // Use the raw GitHub URL provided by the API to load the image safely
-                    displayImg.src = file.download_url;
+                    // Update image source and toggle visibility
+                    displayImg.src = file.path;
                     displayImg.style.display = 'block';
                     placeholder.style.display = 'none';
                 });
 
                 fileListEl.appendChild(li);
             });
-        })
-        .catch(error => {
-            console.error(error);
-            placeholder.textContent = "Error loading screenshots. Check your GitHub repository settings.";
-        });
-</script>
+        }
+    </script>
 </body>
 </html>
