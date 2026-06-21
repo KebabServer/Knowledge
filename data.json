@@ -1,5 +1,21 @@
 [
     {
+        "nodeId": "D2r_Classic",
+        "title": "D2r Classic",
+        "phase": "D2r Classic",
+        "displayText": "",
+        "externalUrl": "rsc/Lesson_1_Finding_River_Leads_OOP.html", 
+        "choices": ["D2r_Classic_area_levels"]
+    },
+    {
+        "nodeId": "D2r_Classic_area_levels",
+        "title": "D2r Classic",
+        "phase": "D2r Classic",
+        "displayText": "",
+        "externalUrl": "d2r_classis/classic_arealevels.html", 
+        "choices": []
+    },
+    {
         "nodeId": "Lesson_1_Finding_River_Leads_OOP",
         "title": "Lesson 1: Finding Leads OOP with Strong Hands when your Opponent Lacks Bluffs",
         "phase": "Max Exploit Academy",
