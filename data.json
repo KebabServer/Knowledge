@@ -4,7 +4,7 @@
         "title": "D2r Classic",
         "phase": "D2r Classic",
         "displayText": "",
-        "externalUrl": "rsc/Lesson_1_Finding_River_Leads_OOP.html", 
+        "externalUrl": "", 
         "choices": ["D2r_Classic_area_levels"]
     },
     {
@@ -12,7 +12,7 @@
         "title": "D2r Classic",
         "phase": "D2r Classic",
         "displayText": "",
-        "externalUrl": "d2r_classis/classic_arealevels.html", 
+        "externalUrl": "d2r_classic/classic_arealevels.html", 
         "choices": []
     },
     {
