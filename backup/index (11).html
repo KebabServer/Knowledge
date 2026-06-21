@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-Max Poker Study Tool - Decoupled Engine</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --panel-bg: #1e1e1e;
+            --text-main: #ffffff;
+            --text-muted: #aaaaaa;
+            --accent-green: #27ae60;
+            --accent-blue: #2980b9;
+            --active-node-bg: #2c3e50;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .app-container {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            gap: 15px;
+        }
+
+        /* Left Column Viewport */
+        .left-column {
+            background: #0d0d0d;
+            border-radius: 12px;
+            border: 1px solid #222;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .strategy-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: #ffffff;
+        }
+
+        /* Right Column Stack */
+        .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            height: 100%;
+            overflow-y: hidden;
+        }
+
+        .panel {
+            background-color: var(--panel-bg);
+            border-radius: 12px;
+            border: 1px solid #333;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Tier 1 Narrative */
+        .text-panel {
+            flex: 1.5;
+        }
+
+        .text-panel h2 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+            color: var(--accent-green);
+        }
+
+        .node-description {
+            font-size: 0.88rem;
+            line-height: 1.45;
+            color: #e0e0e0;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .navigation-panel {
+            margin-top: 10px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        /* Tier 2 Index & Controls */
+        .index-panel {
+            flex: 1;
+        }
+
+        .index-panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 4px;
+        }
+
+        .index-panel h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .node-index-list {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .nav-btn {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .nav-btn.action-btn {
+            background-color: var(--accent-blue);
+        }
+
+        .nav-btn.info-btn {
+            background-color: #555;
+            font-size: 0.72rem;
+            padding: 4px 8px;
+        }
+
+        .index-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #242424;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .index-item.active {
+            background: var(--active-node-bg);
+            border-color: var(--accent-blue);
+            font-weight: bold;
+        }
+
+        .index-item-phase {
+            font-size: 0.65rem;
+            background: #111;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: var(--text-muted);
+        }
+
+        /* Documentation Schema Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 100;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-box {
+            background: var(--panel-bg);
+            border: 1px solid #444;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #ddd;
+            margin-top: 15px;
+        }
+
+        .schema-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.8rem;
+        }
+
+        .schema-table th,
+        .schema-table td {
+            border: 1px solid #444;
+            padding: 6px 10px;
+            text-align: left;
+        }
+
+        .schema-table th {
+            background: #111;
+            color: var(--accent-green);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-container">
+        <div class="left-column">
+            <iframe id="strategyIframe" class="strategy-iframe" src="about:blank"
+                sandbox="allow-scripts allow-same-origin"></iframe>
+        </div>
+
+        <div class="right-column">
+            <div class="panel text-panel">
+                <h2 id="nodeTitle">Loading Tree...</h2>
+                <div class="node-description" id="nodeDescription">Fetching structural database...</div>
+                <div class="navigation-panel" id="navigationControls"></div>
+            </div>
+
+            <div class="panel index-panel">
+                <div class="index-panel-header">
+                    <h3>Decision Tree Explorer</h3>
+                    <button class="nav-btn info-btn" onclick="toggleModal(true)">View JSON Schema Format</button>
+                </div>
+                <div class="node-index-list" id="nodeIndexList"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="schemaModal">
+        <div class="modal-box">
+            <h2 style="color: var(--accent-green); font-size: 1.25rem;">JSON State Data Architecture Specification</h2>
+            <div class="modal-body">
+                <p>The application engine reads structural data patterns asynchronously from an external array profile
+                    loaded directly inside <code>data.json</code>.</p>
+
+                <h4 style="margin-top: 12px; color: var(--accent-blue);">Root Node Structure Parameters</h4>
+                <table class="schema-table">
+                    <thead>
+                        <tr>
+                            <th>Key Field</th>
+                            <th>Type</th>
+                            <th>Functional Purpose / Example Representation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>nodeId</code></td>
+                            <td>String</td>
+                            <td>Unique ID reference hook used for state tree traversal.</td>
+                        </tr>
+                        <tr>
+                            <td><code>title</code></td>
+                            <td>String</td>
+                            <td>Header label printed atop the text strategy window component.</td>
+                        </tr>
+                        <tr>
+                            <td><code>phase</code></td>
+                            <td>String</td>
+                            <td>Strategic validation tag rendered within tracking logs (e.g. <code>"PREFLOP"</code>).</td>
+                        </tr>
+                        <tr>
+                            <td><code>displayText</code></td>
+                            <td>String</td>
+                            <td>Displayable text about the node.</td>
+                        </tr>
+                        <tr>
+                            <td><code>externalUrl</code></td>
+                            <td>String</td>
+                            <td>Source path safely piped through the isolated frame viewport interface.</td>
+                        </tr>
+                        <tr>
+                            <td><code>choices</code></td>
+                            <td>Array</td>
+                            <td>Options mapping to child nodes target IDs.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="nav-btn" style="margin-top: 15px; width: 100%; background: #c0392b;"
+                onclick="toggleModal(false)">Dismiss Document View</button>
+        </div>
+    </div>
+
+    <script>
+        let gameTree = [];
+        let currentNode = null;
+
+        async function initializeTreeData() {
+            try {
+                const response = await fetch('./data.json');
+                if (!response.ok) throw new Error(`HTTP network error code detected: ${response.status}`);
+
+                gameTree = await response.json();
+                if (gameTree.length > 0) {
+                    currentNode = gameTree[0];
+                    renderApplicationState(currentNode);
+                }
+            } catch (error) {
+                console.error("Critical Failure - JSON Matrix could not load:", error);
+                document.getElementById('nodeTitle').innerText = "Data Initialization Blocked";
+                document.getElementById('nodeDescription').innerHTML = `
+                    <span style="color:#e74c3c; font-weight:bold;">Unable to read file: data.json</span><br><br>
+                    <strong>Troubleshooting Steps:</strong><br>
+                    1. Ensure <code>data.json</code> is saved in the exact same folder as this file.<br>
+                    2. If deployed to GitHub Pages, ensure you committed the lowercase filename accurately.
+                `;
+            }
+        }
+
+        function renderApplicationState(node) {
+            document.getElementById('nodeTitle').innerText = node.title;
+            document.getElementById('nodeDescription').innerText = node.displayText;
+
+            // Render Navigation Options efficiently
+            const controls = document.getElementById('navigationControls');
+            controls.innerHTML = '';
+
+            node.choices.forEach(choice => {
+                const btn = document.createElement('button');
+                btn.className = "nav-btn action-btn";
+                btn.innerText = choice.text;
+                btn.onclick = () => jumpToNodeById(choice.nextNodeId);
+                controls.appendChild(btn);
+            });
+
+            // Safely update framework location context
+            const iframe = document.getElementById('strategyIframe');
+            const targetUrl = "./" + node.externalUrl || 'about:blank';
+            if (iframe.contentWindow) {
+                iframe.contentWindow.location.replace(targetUrl);
+            } else {
+                iframe.src = targetUrl;
+            }
+
+            renderNodeIndexList();
+        }
+
+        function jumpToNodeById(id) {
+            const targetNode = gameTree.find(n => n.nodeId === id);
+            if (targetNode) {
+                currentNode = targetNode;
+                renderApplicationState(currentNode);
+            }
+        }
+
+        function renderNodeIndexList() {
+            const indexContainer = document.getElementById('nodeIndexList');
+            indexContainer.innerHTML = '';
+            gameTree.forEach(node => {
+                const itemDiv = document.createElement('div');
+                itemDiv.className = `index-item ${node.nodeId === currentNode.nodeId ? 'active' : ''}`;
+                itemDiv.innerHTML = `<span>${node.title}</span><span class="index-item-phase">${node.phase}</span>`;
+                itemDiv.onclick = () => jumpToNodeById(node.nodeId);
+                indexContainer.appendChild(itemDiv);
+            });
+        }
+
+        function toggleModal(open) {
+            document.getElementById('schemaModal').style.display = open ? 'flex' : 'none';
+        }
+
+        document.addEventListener("DOMContentLoaded", initializeTreeData);
+    </script>
+</body>
+
+</html>
